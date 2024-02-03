@@ -1,0 +1,6 @@
+.card {
+    border: 2px dashed gray;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: beige;
+}
