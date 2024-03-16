@@ -1,20 +1,32 @@
-export default function BestSeller({ carrito }) {
+import { useContext } from "react";
+import Producto from "./Producto";
+import { CarritoContext } from "../contextos/CarritoContexto";
+
+export default function BestSeller() {
+  const carrito = useContext(CarritoContext);
   const productoMasDemandado = encontrarObjetoConMayorCantidad(carrito.detalle);
   const totalMasDemantado = productoMasDemandado
     ? productoMasDemandado.cantidad * productoMasDemandado.producto.valor
     : 0;
+  let productoMasDemandadoJSX;
+  if (productoMasDemandado) {
+    productoMasDemandadoJSX = (
+      <p>
+        El producto mas demandado es{" "}
+        <Producto producto={productoMasDemandado.producto} /> con una cantidad
+        de {productoMasDemandado.cantidad} sumando un total de ${" "}
+        {totalMasDemantado}
+      </p>
+    );
+  }
+  const sinProductosEnElCarritoJSX = (
+    <p>Aun no hay productos en el carrito para calcular el best seller</p>
+  );
   return (
     <>
-      <p>
-        {productoMasDemandado
-          ? "El producto mas demandado es " +
-            productoMasDemandado.producto.nombre +
-            " con una cantidad de " +
-            productoMasDemandado.cantidad +
-            " sumando un total de $" +
-            totalMasDemantado
-          : "Aun no hay productos en el carrito para calcular el best seller"}
-      </p>
+      {productoMasDemandado
+        ? productoMasDemandadoJSX
+        : sinProductosEnElCarritoJSX}
     </>
   );
 }
