@@ -8,6 +8,7 @@ import {
   CarritoContext,
   CarritoDispatchContext,
 } from "./contextos/CarritoContexto";
+import Layout from "./Layout";
 
 function App() {
   const [carritoEstado, dispatch] = useImmerReducer(
@@ -18,10 +19,10 @@ function App() {
     <>
       <CarritoContext.Provider value={carritoEstado}>
         <CarritoDispatchContext.Provider value={dispatch}>
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
+          <Layout>
             <ListadoProductos listado={productos} />
             <Carrito />
-          </div>
+          </Layout>
           <BestSeller />
         </CarritoDispatchContext.Provider>
       </CarritoContext.Provider>
