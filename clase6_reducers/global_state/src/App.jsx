@@ -11,7 +11,7 @@ function App() {
     <>
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         <ListadoProductos listado={productos} dispatch={dispatch} />
-        <Carrito detalle={carritoEstado} />
+        <Carrito detalle={carritoEstado} dispatch={dispatch} />
       </div>
       <BestSeller carrito={carritoEstado} />
     </>
