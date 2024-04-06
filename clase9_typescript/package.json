@@ -1,0 +1,16 @@
+{
+  "name": "clase9_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "equipo_futbol_interfaces.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "tsc equipo_futbol_interfaces.ts && node equipo_futbol_interfaces.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.4.4"
+  }
+}

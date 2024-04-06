@@ -64,4 +64,6 @@ const ronaldo: Jugador = {
   titulos_obtenidos: 20,
 };
 
+console.log(ronaldo);
+
 // Tarea: Completar el equipo de futbol

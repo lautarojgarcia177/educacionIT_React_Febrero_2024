@@ -70,6 +70,10 @@ enum posicion {
   delantero,
 }
 
+type _posicion = "defensor" | "punta" | "mediocampo" | "delantero";
+
+// Recomiendo usar enum en lugar de type, porque enum permite que haya intellisense
+
 interface Jugador {
   persona: Persona;
   posicion: posicion;
